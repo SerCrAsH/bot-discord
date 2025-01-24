@@ -1,0 +1,35 @@
+- Install [Node.js 22](https://nodejs.org/en/download/prebuilt-installer) or higher
+- Install [Python 3.12](https://www.python.org/downloads/)
+- Install C++ compiler. Follow this [guide](https://github.com/nodejs/node-gyp#on-windows)
+- Install FFMpeg. Follow this [guide](https://www.wikihow.com/Install-FFmpeg-on-Windows)
+
+FFmpeg for distube like https://distube.js.org/
+Follow this guide (in windows install 7z then unzip and add that folder/bin into windows path)
+https://phoenixnap.com/kb/ffmpeg-windows :
+- Install 7-Zip first so you can extract the FFmpeg files.
+- Download the latest full release build from https://www.gyan.dev/ffmpeg/builds.
+- Extract the FFmpeg folder, move it to the root of your main drive, and add it to your system path.
+
+example folder at C:\Users\<user>\AppData\Local\ffmpeg-portable\ffmpeg
+
+# Before opus @discordjs/opus
+npm i node-pre-gyp rebuild
+
+and then
+npm install @discordjs/voice @discordjs/opus sodium-native
+
+if error:
+[FFMPEG_EXITED]: ffmpeg exited with code 343616999
+
+Apply this fixes:
+https://github.com/distubejs/ytdl-core/pull/163#issuecomment-2605169107
+"@distube/ytdl-core": "github:ToddyTheNoobDud/ytdl-core-stuff",
+Apply Toddy's hotfix
+Note 1 (Installing this): Just type this out on terminal and you will be done i guess: npm add https://github.com/ToddyTheNoobDud/ytdl-core-stuff.git
+
+WEB_EMBEDDED client version currently working: "1.20250115.01.00"
+
+##############
+Random improvement tries
+npm install zlib-sync@latest
+npm install erlpack@latest
