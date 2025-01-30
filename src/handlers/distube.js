@@ -3,9 +3,6 @@ import { SpotifyPlugin } from '@distube/spotify';
 import { YouTubePlugin } from '@distube/youtube';
 import { SoundCloudPlugin } from '@distube/soundcloud';
 import { YtDlpPlugin } from '@distube/yt-dlp';
-import ytdlUtils from "@distube/ytdl-core/lib/utils.js";
-import ytdl from "@distube/ytdl-core";
-import { createAgent } from "@distube/ytdl-core/lib/agent.js";
 import Discord from 'discord.js';
 import fs from 'fs';
 
