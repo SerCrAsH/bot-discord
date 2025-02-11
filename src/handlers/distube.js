@@ -6,6 +6,9 @@ import { YtDlpPlugin } from '@distube/yt-dlp';
 import Discord from 'discord.js';
 import fs from 'fs';
 
+const leaveTimers = new Map();
+const MAX_WAIT_TIME = 120000
+
 export default client => {
    console.log(`Music handler loaded`.red);
 
@@ -44,6 +47,15 @@ export default client => {
    }
 
    client.DisTube.on("playSong", (queue, song) => {
+
+      // Reset leave timers
+      const guildId = queue.textChannel.guildId;
+      if (leaveTimers.has(guildId)) {
+         clearTimeout(leaveTimers.get(guildId));
+         leaveTimers.delete(guildId);
+      }
+
+      // Send message to channel
       queue.textChannel.send({
          embeds: [new Discord.EmbedBuilder()
             .setColor("#3498db")
@@ -106,5 +118,19 @@ export default client => {
                })
          ]
       });
+   });
+
+
+   client.DisTube.on("finish", (queue) => {
+      const voiceChannel = queue.voice;
+      if (!voiceChannel) return;
+      const guildId = queue.textChannel.guildId;
+
+      const timer = setTimeout(() => {
+         queue.voice.leave();
+         leaveTimers.delete(guildId);
+      }, MAX_WAIT_TIME);
+
+      leaveTimers.set(guildId, timer);
    });
 };
