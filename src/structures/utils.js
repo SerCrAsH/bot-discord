@@ -15,6 +15,5 @@ export default class BotUtils {
 export async function loadFiles(rootPath) {
     const pattern = `${process.cwd().replace(/\\/g, "/")}/src/${rootPath}/**/*`;
     const files = glob.sync(pattern).map((file) => file.replace(/\\/g, "/"));
-    console.log(`Found in pattern: ${pattern} .. these files: ${files}`)
     return files;
 }
