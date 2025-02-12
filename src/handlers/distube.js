@@ -62,8 +62,12 @@ export default client => {
 
       // Send message to channel
       if (!queue.textChannel) {
+         distube.setVolume(guildId, 300);
          return;
       }
+
+      distube.setVolume(guildId, 50);
+
       queue.textChannel.send({
          embeds: [new Discord.EmbedBuilder()
             .setColor("#3498db")

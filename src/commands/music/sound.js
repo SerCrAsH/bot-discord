@@ -48,7 +48,7 @@ export default {
                 console.log(`Queue already playing in ${message.guild.name}`)
                 return;
             }
-
+            
             distube.play(message.member.voice?.channel, sound.fileUrl);
         } catch (e) {
             message.reply(`Error while playing ${sound}... : ${e}`);

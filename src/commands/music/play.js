@@ -14,6 +14,7 @@ export default {
         const song = args.join(" ");
 
         try {
+            // Setup default volume
             client.DisTube.play(message.member.voice?.channel, song, {
                 member: message.member,
                 textChannel: message.channel,
