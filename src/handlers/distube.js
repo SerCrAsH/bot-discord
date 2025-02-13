@@ -9,7 +9,7 @@ import URL from 'url';
 import fs from 'fs';
 
 const leaveTimers = new Map();
-const MAX_WAIT_TIME = 180000
+const MAX_WAIT_TIME = 5 * 60 * 1000; // X min
 
 export default client => {
    console.log(`Music handler loaded`.red);
@@ -62,7 +62,7 @@ export default client => {
 
       // Send message to channel
       if (!queue.textChannel) {
-         distube.setVolume(guildId, 300);
+         distube.setVolume(guildId, 150);
          return;
       }
 
