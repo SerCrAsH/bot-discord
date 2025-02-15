@@ -5,7 +5,6 @@ import { FilePlugin } from '@distube/file';
 import { SoundCloudPlugin } from '@distube/soundcloud';
 import { YtDlpPlugin } from '@distube/yt-dlp';
 import Discord from 'discord.js';
-import URL from 'url';
 import fs from 'fs';
 
 const leaveTimers = new Map();
@@ -20,7 +19,7 @@ export default client => {
       savePreviousSongs: true,
       emitAddSongWhenCreatingQueue: false,
       nsfw: false,
-      plugins: [
+      plugins: [ // Order matters!
          new FilePlugin(),
          new YouTubePlugin({
             ytdlOptions: {
@@ -30,9 +29,9 @@ export default client => {
                ? JSON.parse(fs.readFileSync(`./cookies.json`))
                : null
          }),
-         new YtDlpPlugin({ update: true }),
          new SpotifyPlugin(),
          new SoundCloudPlugin(),
+         new YtDlpPlugin({ update: true }),
 
       ]
    });

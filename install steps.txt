@@ -17,22 +17,3 @@ npm i node-pre-gyp rebuild
 
 and then
 npm install @discordjs/voice @discordjs/opus sodium-native
-
-if error:
-[FFMPEG_EXITED]: ffmpeg exited with code 343616999
-
-Apply this fixes:
-https://github.com/distubejs/ytdl-core/pull/163#issuecomment-2605169107
-"@distube/ytdl-core": "github:ToddyTheNoobDud/ytdl-core-stuff",
-Apply Toddy's hotfix
-Note 1 (Installing this): Just type this out on terminal and you will be done i guess: npm add https://github.com/ToddyTheNoobDud/ytdl-core-stuff.git
-
-WEB_EMBEDDED client version currently working: "1.20250115.01.00"
-
-### Replace this line 787 of node_modules/distube/dist/index.mjs (for ES modules executions):
-opts.i = fileUrl.pathname.substring(1); // Bugfix
-
-##############
-Random improvement tries
-npm install zlib-sync@latest
-npm install erlpack@latest
