@@ -13,7 +13,7 @@
   "description": "",
   "type": "module",
   "dependencies": {
-    "@discordjs/opus": "^0.9.0",
+    "@discordjs/opus": "^0.10.0",
     "@discordjs/voice": "^0.18.0",
     "@distube/direct-link": "^1.0.1",
     "@distube/file": "^1.0.1",
@@ -21,20 +21,20 @@
     "@distube/spotify": "^2.0.2",
     "@distube/youtube": "^1.0.4",
     "@distube/yt-dlp": "^2.0.1",
-    "@distube/ytdl-core": "^4.15.9",
+    "@distube/ytdl-core": "4.15.9",
     "@distube/ytsr": "^2.0.4",
-    "@mapbox/node-pre-gyp": "^1.0.11",
+    "@mapbox/node-pre-gyp": "^2.0.0",
     "colors": "^1.4.0",
-    "discord.js": "^14.17.3",
+    "discord.js": "^14.18.0",
     "distube": "^5.0.4",
     "dotenv": "^16.4.7",
     "glob": "^11.0.1",
     "libsodium-wrappers": "^0.7.15",
-    "node-gyp": "^11.0.0",
+    "node-gyp": "^11.1.0",
     "rebuild": "^0.1.2",
     "util": "^0.12.5"
   },
   "devDependencies": {
-    "@types/node": "^22.10.7"
+    "@types/node": "^22.13.4"
   }
 }
