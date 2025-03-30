@@ -23,7 +23,10 @@ export default client => {
          new FilePlugin(),
          new YouTubePlugin({
             ytdlOptions: {
-               // playerClients: ["ANDROID", "WEB", "WEB_CREATOR", "IOS", "WEBEMBEDDED", "MWEB"] // only ANDROID is working
+               quality: 'highestaudio',
+                //playerClients: ["ANDROID"]
+                //playerClients: ["ANDROID"]
+                //playerClients: ["ANDROID", "WEB", "WEB_CREATOR", "IOS", "WEBEMBEDDED", "MWEB"] // only ANDROID is working
             },
             cookies: process.env.USE_YT_COOKIES === 'true'
                ? JSON.parse(fs.readFileSync(`./cookies.json`))
